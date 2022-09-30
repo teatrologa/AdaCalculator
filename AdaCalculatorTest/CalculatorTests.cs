@@ -60,10 +60,10 @@ namespace AdaCalculatorTest
 
         #endregion
 
+
         #region Testes Positivos (Com Mock)
 
-        [Theory]
-        [InlineData("sum", 1, 1, 2)]
+        [Theory(DisplayName = "Soma Positivo Mock")]
         [InlineData("sum", 21, 34, 55)]
         [InlineData("sum", -56, -42, -98)]
         [InlineData("sum", -48, 97, 49)]
@@ -71,14 +71,44 @@ namespace AdaCalculatorTest
         [InlineData("sum", 9, -9, 0)]
         public void Calculator_SomaMock_Valido(string operation, double n1, double n2, double result)
         {
-            _calcMock.Setup(calc => calc.Calculate(operation, n1, n2)).Returns((operation, result));
-            var metodoUsado = _calculatorMachineMock.Calculate(operation, n1, n2);
-            _calcMock.Verify(c => c.Calculate(operation, n1, n2), Times.Once);
+            //Arrange
+            _calcMock.Setup(calc => calc.Calculate(It.IsAny<string>(), It.IsAny<double>(), It.IsAny<double>())).Returns((operation, result));
+
+            //Act
+            var opMock = _calculatorMachineMock.Calculate(operation, n1, n2);
+            var op = _calculatorMachine.Calculate(operation, n1, n2);
+
+            //Assert
+            Assert.Equal(operation, opMock.operation);
+            Assert.Equal(result, opMock.result);
+            Assert.Equal(operation, op.operation);
+            Assert.Equal(result, op.result);
+        }
+
+
+        [Theory(DisplayName = "Multiplicação Positivo Mock")]
+        [InlineData("multiply", 21, 0, 0)]
+        [InlineData("multiply", -6, 1, -6)]
+        [InlineData("multiply", -48, -2, 96)]
+        [InlineData("multiply", 9, 1, 9)]
+        public void Calculator_MultipicacaoMock_Valido(string operation, double n1, double n2, double result)
+        {
+            //Arrange
+            _calcMock.Setup(calc => calc.Calculate(It.IsAny<string>(), It.IsAny<double>(), It.IsAny<double>())).Returns((operation, result));
+
+            //Act
+            var opMock = _calculatorMachineMock.Calculate(operation, n1, n2);
+            var op = _calculatorMachine.Calculate(operation, n1, n2);
+
+            //Assert
+            Assert.Equal(operation, opMock.operation);
+            Assert.Equal(result, opMock.result);
+            Assert.Equal(operation, op.operation);
+            Assert.Equal(result, op.result);
         }
 
 
         #endregion
-
 
 
         #region Testes Negativos
