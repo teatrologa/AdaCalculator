@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "oyz9IYwYShzliCMhfaUqD6Zk4DRqDlvEwC8qJcLRWd3Lojgq5pN1gBQforUNWMUNcAJKETQoZGnF25H4Je/spg==",
+  "dgSpecHash": "Udt2vzIRbPK02CyeUcCQQf2BVF3z+8st7lXl+8tMafxCSqg5Ta31Ku0wQAhpHZ7viUHdIjy3iVAP3TBJd5eEBA==",
   "success": true,
-  "projectFilePath": "C:\\Projetos\\C#\\AdaCalculator\\AdaCalculator\\AdaCalculator.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\Usuários\\MARÍLIA\\Documents\\Top Coders\\Testes Automatizados\\AdaCalculator\\AdaCalculator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\MARÍLIA\\.nuget\\packages\\castle.core\\5.1.0\\castle.core.5.1.0.nupkg.sha512",
+    "C:\\Users\\MARÍLIA\\.nuget\\packages\\moq\\4.18.2\\moq.4.18.2.nupkg.sha512",
+    "C:\\Users\\MARÍLIA\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
